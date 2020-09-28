@@ -2,6 +2,7 @@
 Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist. If you plan to use any of the code featured in this project please give me credit with a link to my github!
 
 ## Dependencies
+Make sure [node.js](https://nodejs.org/en/download/) is installed!
 ```
 npm install puppeteer -g
 npm install terminal-image -g
