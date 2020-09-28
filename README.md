@@ -14,4 +14,4 @@ node main.js
 ```
 **Make sure you're in the same directory as ```main.js``` or it may not run!**
 
-Note: I would've made an npm package but I've been having trouble packaging it with puppeteer, if you know of a solution please let me know. Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case let me know. If you avidly use this package or have any feature requests let me know and I'll be sure to add more development to this project. Thanks! :blush:
+Note: I would've made an npm package but I've been having trouble packaging it with puppeteer, if you know of a solution please let me know. Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case start an 'new issue' in this repository. If you avidly use this package or have any feature requests please [hit me up](https://www.instagram.com/ethanspams.__/) and I'll be sure to more features! Thanks! :blush:
