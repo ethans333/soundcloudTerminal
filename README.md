@@ -1,4 +1,7 @@
 # soundcloudTerminal  🎛️
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/CAPTURE.PNG?raw=true)
+
 Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist. If you plan to use any of the code featured in this project please give me credit!
 
 ## Dependencies
