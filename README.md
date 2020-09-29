@@ -4,9 +4,11 @@ Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searc
 ## Dependencies
 Make sure [node.js](https://nodejs.org/en/download/) is installed!
 ```
-npm install puppeteer -g
-npm install terminal-image -g
+npm install puppeteer
+npm install terminal-image
+npm install got
 ```
+**Make sure you're in the same directory as ```main.js``` or it may not run!**
 
 ## Use
 ```
