@@ -3,12 +3,13 @@ Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searc
 
 ## Dependencies
 Make sure [node.js](https://nodejs.org/en/download/) is installed!
+
+To install the dependencies either run the npm installations listed below in the ```soundcloudTerminal``` directory or run the ```install-dependencies.bat``` as administrator.
 ```
 npm install puppeteer
 npm install terminal-image
 npm install got
 ```
-**Make sure you're in the same directory as ```main.js``` or it may not run!**
 
 ## Use
 ```
