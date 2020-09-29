@@ -1,10 +1,10 @@
 # soundcloudTerminal  🎛️
-Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist. If you plan to use any of the code featured in this project please give me credit with a link to my github!
+Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist. If you plan to use any of the code featured in this project please give me credit!
 
 ## Dependencies
 Make sure [node.js](https://nodejs.org/en/download/) is installed!
 
-To install the dependencies either run the npm installations listed below in the ```soundcloudTerminal``` directory or run the ```install-dependencies.bat``` as administrator.
+To install the dependencies either run the npm installations listed below within the ```soundcloudTerminal``` directory or run the ```install-dependencies.bat``` file as administrator.
 ```
 npm install puppeteer
 npm install terminal-image
