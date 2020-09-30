@@ -13,9 +13,9 @@
     "author": "ethans333",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/b361asd/soundcloudTerminal/issues"
+        "url": "https://github.com/ethans333/soundcloudTerminal/issues"
     },
-    "homepage": "https://github.com/b361asd/soundcloudTerminal#readme",
+    "homepage": "https://github.com/ethans333/soundcloudTerminal#readme",
     "dependencies": {
         "got": "^11.7.0",
         "puppeteer": "^5.3.1",
