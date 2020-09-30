@@ -1,0 +1,24 @@
+{
+    "name": "soundcloudterminal",
+    "version": "1.0.0",
+    "description": "Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist.",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ethans333/soundcloudTerminal"
+    },
+    "author": "ethans333",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ethans333/soundcloudTerminal/issues"
+    },
+    "homepage": "https://github.com/ethans333/soundcloudTerminal#readme",
+    "dependencies": {
+        "got": "^11.7.0",
+        "puppeteer": "^5.3.1",
+        "terminal-image": "^1.2.1"
+    }
+}

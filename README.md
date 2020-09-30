@@ -1,23 +1,29 @@
-# soundcloudTerminal  🎛️
+# soundcloudTerminal 🎛️
 
-![soundcloudTerminalScreenshot](https://github.com/ethans333/soundcloudTerminal/blob/master/Capture.PNG)
+![soundcloudTerminalScreenshot](Capture.PNG)
 
 Utilize SoundCloud within a terminal environment. Play SoundCloud songs by searching a song or an artist. If you plan to use any of the code featured in this project please give me credit!
 
-## Dependencies
-Make sure [node.js](https://nodejs.org/en/download/) is installed!
+## Instructions
 
-To install the dependencies either run the npm installations listed below within the ```soundcloudTerminal``` directory or run the ```install-dependencies.bat``` file as administrator.
+Make sure [Git](https://git-scm.com/) and [node.js](https://nodejs.org/en/download/) is installed!
+
+First, clone the repository to your local machine.
+
 ```
-npm install puppeteer
-npm install terminal-image
-npm install got
+git clone https://github.com/ethans333/soundcloudTerminal
+```
+
+To install the dependencies, run
+
+```
+npm install
 ```
 
 ## Use
-```
-node main.js
-```
-**Make sure you're in the same directory as ```main.js``` or it may not run!**
 
-Note: I would've made an npm package but I've been having trouble packaging it with puppeteer, if you know of a solution please let me know. Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case start an 'new issue' in this repository. If you avidly use this package or have any feature requests please [hit me up](https://www.instagram.com/ethanspams.__/) and I'll be sure to more features! Thanks! :blush:
+```
+npm start
+```
+
+Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case start an 'new issue' in this repository. If you avidly use this package or have any feature requests please [hit me up](https://www.instagram.com/ethanspams.__/) and I'll be sure to more features! Thanks! :blush:
