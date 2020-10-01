@@ -26,4 +26,4 @@ npm install
 npm start
 ```
 
-Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case start a 'new issue' in this repository. If you come across any strange logs to the terminal just restart the app and it should fix itself. If you avidly use this package or have any feature requests please [hit me up](https://www.instagram.com/ethanspams.__/) and I'll be sure to add more features! Happy listening! :blush:
+Also, this hasn't been tested on slower internet connections which may cause issues, if that is the case start a 'new issue' in this repository. If you come across any strange logs to the terminal just restart the app; bug fixes should be coming soon! If you avidly use this package or have any feature requests please [hit me up](https://www.instagram.com/ethanspams.__/) and I'll be sure to add more features! Happy listening! :blush:
