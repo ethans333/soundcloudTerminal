@@ -19,6 +19,7 @@
     "dependencies": {
         "got": "^11.7.0",
         "puppeteer": "^5.3.1",
-        "terminal-image": "^1.2.1"
+        "terminal-image": "^1.2.1",
+        "terminal-kit": "^1.43.0"
     }
 }
