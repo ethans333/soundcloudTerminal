@@ -1,6 +1,5 @@
 # soundcloudTerminal 🎛️
 
-Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 ![](CAPTURE.gif)  |  ![](CAPTURE.gif)
 
