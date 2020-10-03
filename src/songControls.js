@@ -3,6 +3,7 @@ const term = require('terminal-kit').terminal;
 const en = require('./elementNames');
 const terminalImage = require('terminal-image'), got = require('got');
 const fd = require('./fetchDownload');
+const likeSong = require('./likeSong');
 
 let paused = false, second = 1000;
 
@@ -150,9 +151,13 @@ let dataExists = async (page) => {
 
 let controls = async (page) => {
     await createSong(page)
+    let refreshTerminal = () => {
+        console.clear()
+        loadTrack(page, page.url())
+    }
 
     let controlsQuestion = () => {
-        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track", "Download Track"];
+        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track", "More"];
         term.singleColumnMenu(controlOptions, {}, function(error, response){
             if(response.selectedIndex == 0){
                 pause(page)
@@ -163,11 +168,21 @@ let controls = async (page) => {
             } else if(response.selectedIndex == 2){
                 prev(page)
             } else {
-                if(dataExists(page)){
-                    fd.fetchDownload(page.url())
-                    console.clear()
-                    loadTrack(page, page.url())
-                }
+                console.clear()
+                const moreOptions = ["Like Song", "Download Track", "<="];
+                term.singleColumnMenu(moreOptions, {}, function(error, response){
+                    if(response.selectedIndex == 0){
+                        likeSong.likeSong(page.url())
+                        refreshTerminal()
+                    } else if(response.selectedIndex == 1){
+                        if(dataExists(page)){
+                            fd.fetchDownload(page.url())
+                            refreshTerminal()
+                        }
+                    } else {
+                        refreshTerminal()
+                    }
+                })
             }
         })
     }
