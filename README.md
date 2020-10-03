@@ -10,7 +10,7 @@ This is still under devlopment so **expect bugs!!! :beetle:**
 
 ## Features :wrench:
 
-• Stream songs from SoundCloud with autoplay that's relative to your first selected song.<br>
+• Stream songs from SoundCloud with autoplay that's relative to your first selected song's genre.<br>
 • Download your favorite songs with their [metadata](https://en.wikipedia.org/wiki/ID3).<br>
 • Like songs.<br>
 
