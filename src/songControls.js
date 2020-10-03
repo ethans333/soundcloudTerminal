@@ -1,14 +1,8 @@
 const puppeteer = require('puppeteer');
-const isPkg = typeof process.pkg !== 'undefined'
 const term = require('terminal-kit').terminal;
-const readline = require('readline');
 const en = require('./elementNames');
 const terminalImage = require('terminal-image'), got = require('got');
-const rl = readline.createInterface({
-    input: process.stdin, 
-    output: process.stdout,
-    terminal: false
-});
+const fd = require('./fetchDownload');
 
 let paused = false, second = 1000;
 
@@ -57,7 +51,7 @@ let prev = async (page) => {
         document.querySelector(prevButton).click()
     }, en.songControls.prevButton)
 
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(500)
     
     await Promise.all([
         page.waitForNavigation(),
@@ -69,27 +63,39 @@ let prev = async (page) => {
     loadTrack(page)
 }
 
-let loadTrack = async (page) => {
+let loadTrack = async (page, url) => {
     console.clear()
 
     await page.waitForTimeout(500)
-    let Track = await page.evaluate((albumCover, trackTitle, artistName) => {
-        return {
-            albumCover: ((document.querySelector(albumCover).style.backgroundImage
-                ).replace('url("', '')).replace('")', ''),
-            title: document.querySelectorAll(trackTitle)[0].innerText,
-            artist: document.querySelectorAll(artistName)[0].innerText
+
+    let Track = await page.evaluate((albumCover, trackTitle, artistName)=>{
+        if(document.querySelector(albumCover) != null){
+            return {
+                albumCover: ((document.querySelector(albumCover).style.backgroundImage).replace('url("', '')).replace('")', ''),
+                title: document.querySelectorAll(trackTitle)[0].innerText,
+                artist: document.querySelectorAll(artistName)[0].innerText
+            }
+        } else {
+            return {
+                albumCover: 'https://avatars1.githubusercontent.com/u/19983539?s=400&u=48d1192ed90903c54661d960424f9117b19abcf5&v=4',
+                title: 'Song data not found! This cannot be downloaded... 😔',
+                artist: ''
+            }
         }
-    }, 
-    en.loadTrack.albumCover, 
+    }, en.loadTrack.albumCover,
     en.loadTrack.trackTitle, 
-    en.loadTrack.artistName)
+    en.loadTrack.artistName);
 
     let trackAlbumCover = await got(Track.albumCover).buffer();
     
     console.clear()
-    console.log(`${await terminalImage.buffer(trackAlbumCover)}`);
-    console.log(`~~ ${await Track.title} ~~\n`)
+    console.log(await terminalImage.buffer(trackAlbumCover));
+    
+    if(Track.title == 'Song data not found! This cannot be downloaded... 😔'){
+        term.brightRed(await Track.title)
+    } else {
+        console.log(`~~ ${await Track.title} ~~\n`)
+    }
 
     controls(page);
 }
@@ -126,32 +132,42 @@ let createSong = async (page) => {
     let songDuration = await page.evaluate((songDuration)=>{
         let _songDuration = document.querySelector(songDuration).innerText
         return {
-            minutes: parseInt(
-                _songDuration.substr(0, _songDuration.indexOf(':'))),
-            seconds: parseInt(
-                _songDuration.substr(_songDuration.indexOf(':')+1, _songDuration.length)),
+            minutes: parseInt(_songDuration.substr(0, _songDuration.indexOf(':'))),
+            seconds: parseInt(_songDuration.substr(_songDuration.indexOf(':')+1, _songDuration.length)),
         }
     }, en.songControls.songDuration)
     
-    songsPlaying.push(new Song(
-        (songDuration.minutes * second*60) + (songDuration.seconds * second),
-        page
-    ))
+    songsPlaying.push(new Song((songDuration.minutes * second*60) + (songDuration.seconds * second), page))
+}
+
+let dataExists = async (page) => {
+    return await page.evaluate((albumCover)=>{
+        if(document.querySelector(albumCover) != null){
+            return true
+        }
+    }, en.loadTrack.albumCover);
 }
 
 let controls = async (page) => {
     await createSong(page)
 
     let controlsQuestion = () => {
-        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track"];
+        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track", "Download Track"];
         term.singleColumnMenu(controlOptions, {}, function(error, response){
             if(response.selectedIndex == 0){
                 pause(page)
-                controlsQuestion()
+                console.clear()
+                loadTrack(page, page.url())
             } else if(response.selectedIndex == 1){
                 skip(page)
-            } else {
+            } else if(response.selectedIndex == 2){
                 prev(page)
+            } else {
+                if(dataExists(page)){
+                    fd.fetchDownload(page.url())
+                    console.clear()
+                    loadTrack(page, page.url())
+                }
             }
         })
     }

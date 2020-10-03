@@ -30,5 +30,11 @@ module.exports = {
         avatar: 'div.profileHeaderInfo__avatar.sc-media-image > div > span',
         intTracks: 'td:nth-child(3) > a > div',
         songs: 'div[class="sound__header"] > div[class="soundTitle sc-clearfix sc-hyphenate sc-type-h2 streamContext"] > div[class="soundTitle__titleContainer"] > div[class="soundTitle__usernameTitleContainer"] > a',
+    },
+    fetchDownload: {
+        playButton: '#content > div > div.l-listen-hero > div > div.fullHero__foreground.fullListenHero__foreground > div.fullHero__title > div > div > div.soundTitle__playButton.soundTitle__playButtonHero > a',
+        title: '#content > div > div.l-listen-hero > div > div.fullHero__foreground.fullListenHero__foreground > div.fullHero__title > div > div > div.soundTitle__usernameTitleContainer > span > span',
+        artist: '#content > div > div.l-listen-hero > div > div.fullHero__foreground.fullListenHero__foreground > div.fullHero__title > div > div > div.soundTitle__usernameTitleContainer > div > a',
+        albumCover: '#content > div > div.l-listen-hero > div > div.fullHero__foreground.fullListenHero__foreground > div.fullHero__artwork > div > div > div > span'
     }
 }
