@@ -1,6 +1,6 @@
 # soundcloudTerminal 🎛️
 
-![](CAPTURE.gif) 
+<img src="CAPTURE.gif" width="40%">
 
 Utilize SoundCloud within a terminal environment; play SoundCloud tracks by searching a track or an artist **without** the interuption of annoying **ads** (obviously). If you plan to use any of the code featured in this project please give me credit! 
 This is still under devlopment so **expect bugs!!! :beetle:**
