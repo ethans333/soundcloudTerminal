@@ -156,7 +156,8 @@ let controls = async (page) => {
         term.singleColumnMenu(controlOptions, {}, function(error, response){
             if(response.selectedIndex == 0){
                 pause(page)
-                controlsQuestion()
+                console.clear()
+                loadTrack(page, page.url())
             } else if(response.selectedIndex == 1){
                 skip(page)
             } else if(response.selectedIndex == 2){
