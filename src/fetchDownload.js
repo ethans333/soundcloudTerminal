@@ -77,13 +77,13 @@ let returnUrl = async (url, page, browser) => {
     let fs = require('fs'),
     request = require('request');
 
-    if(!fs.existsSync('./Saved Songs')){
-      fs.mkdirSync('./Saved Songs'); 
+    if(!fs.existsSync('../Saved Songs')){
+      fs.mkdirSync('../Saved Songs'); 
     }
 
     request
     .get(url)
-    .pipe(fs.createWriteStream(`./Saved Songs/${tags.title}.mp3`))
+    .pipe(fs.createWriteStream(`../Saved Songs/${tags.title}.mp3`))
     .on('finish', () => {
         setTags(tags, browser)
     });
@@ -92,7 +92,7 @@ let returnUrl = async (url, page, browser) => {
 
 // IV.
 let setTags = async (info, browser) => {
-  let file = `./Saved Songs/${info.title}.mp3`;
+  let file = `../Saved Songs/${info.title}.mp3`;
 
   let tags = {
     title: info.title,

@@ -5,10 +5,16 @@
   <img src="Capture.png" width="40%">
 </div>
 
-Utilize SoundCloud within a terminal environment, play SoundCloud tracks by searching for a track or an artist **without** the interuption of **ads**. Download your favorite songs with their [metadata](https://en.wikipedia.org/wiki/ID3). If you plan to use any of the code featured in this project please give me credit! 
+Utilize SoundCloud within a terminal environment, play SoundCloud tracks by searching for a track or an artist **without** the interuption of **ads**. If you plan to use any of the code featured in this project please give me credit! 
 This is still under devlopment so **expect bugs!!! :beetle:**
 
-## Instructions
+## Features :wrench:
+
+• Stream songs from SoundCloud with autoplay that's relative to your first selected song's genre.<br>
+• Download your favorite songs with their [metadata](https://en.wikipedia.org/wiki/ID3).<br>
+• Like songs.<br>
+
+## Instructions :memo:
 
 Make sure [Git](https://git-scm.com/) and [node.js](https://nodejs.org/en/download/) are installed!
 
@@ -24,7 +30,7 @@ To install the dependencies, run
 npm install
 ```
 
-## Use
+## Use :thinking:	
 
 ```
 npm start
