@@ -164,7 +164,7 @@ let controls = async (page) => {
     }
 
     let controlsQuestion = () => {
-        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track","End Process","More"];
+        const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track", "End Process", "More"];
         term.singleColumnMenu(controlOptions, {}, function(error, response){
             if(response.selectedIndex == 0){
                 pause(page)
