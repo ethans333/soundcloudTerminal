@@ -156,13 +156,6 @@ let controls = async (page) => {
         loadTrack(page, page.url())
     }
 
-let controls = async (page) => {
-    await createSong(page)
-    let refreshTerminal = () => {
-        console.clear()
-        loadTrack(page, page.url())
-    }
-
     let controlsQuestion = () => {
         const controlOptions = ["Pause/Play", "Skip Track", "Replay/ Go To Previous Track", "End Process", "More"];
         term.singleColumnMenu(controlOptions, {}, function(error, response){
@@ -175,6 +168,7 @@ let controls = async (page) => {
             } else if(response.selectedIndex == 2){
                 prev(page)
             }else if(response.selectedIndex == 3){
+                console.clear()
                 process.exit()
             } else {
                 console.clear()
