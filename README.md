@@ -22,6 +22,7 @@ First, clone the repository to your local machine.
 ```
 git clone https://github.com/ethans333/soundcloudTerminal
 ```
+<br>
 If you'd like to avoid downloading [Git](https://git-scm.com/) you can download the code from [this page](https://github.com/ethans333/soundcloudTerminal).
 
 To install the dependencies, run
