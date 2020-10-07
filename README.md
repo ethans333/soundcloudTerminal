@@ -15,7 +15,6 @@ This is still under devlopment so **expect bugs!!! :beetle:**
 • Like songs.<br>
 
 ## Instructions :memo:
-Install this repository from this page and skip downloading [Git](https://git-scm.com/) or: <br>
 Make sure [Git](https://git-scm.com/) and [node.js](https://nodejs.org/en/download/) are installed!
 
 First, clone the repository to your local machine.
@@ -23,6 +22,7 @@ First, clone the repository to your local machine.
 ```
 git clone https://github.com/ethans333/soundcloudTerminal
 ```
+If you'd like to avoid downloading [Git](https://git-scm.com/) you can download the code from [this page](https://github.com/ethans333/soundcloudTerminal).
 
 To install the dependencies, run
 
